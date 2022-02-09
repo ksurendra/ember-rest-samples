@@ -2,15 +2,16 @@
   "name": "ember-rest-samples",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for ember-rest-samples goes here",
+  "description": "EmberJS application to demonstarte the usage of REST APIs.",
   "repository": "",
-  "license": "MIT",
-  "author": "",
+  "license": "The UnLicense",
+  "author": "Suren K",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "scripts": {
+    "deploy": "ember build --environment production && ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\" && git -c core.sshCommand='ssh -i ~/.ssh/suren-github' push origin gh-pages:gh-pages",
     "build": "ember build --environment=production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
@@ -54,6 +55,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-qunit": "^7.2.0",
+    "gh-pages": "^3.2.3",
     "loader.js": "^4.7.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
