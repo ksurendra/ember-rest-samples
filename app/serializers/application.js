@@ -1,11 +1,9 @@
-import JSONAPISerializer from '@ember-data/serializer/json-api';
-import { underscore } from '@ember/string';
+import JSONSerializer from '@ember-data/serializer/json';
 
-export default class ApplicationSerializer extends JSONAPISerializer {
-  /* TODO: After josn repsonse is mapped to model
+export default class ApplicationSerializer extends JSONSerializer {
   // specify underscore-formatted keys
   keyForAttribute(attr) {
-    return underscore(attr);
+    return attr;
   }
 
   // use the `data` property in the payload as the serializable response
@@ -13,5 +11,4 @@ export default class ApplicationSerializer extends JSONAPISerializer {
     payload = payload.data;
     return super.normalizeResponse(store, primaryModelClass, payload, id, requestType);
   }
-  */
 }
